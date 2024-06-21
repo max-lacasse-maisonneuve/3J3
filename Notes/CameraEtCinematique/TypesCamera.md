@@ -23,3 +23,9 @@ La caméra libre est une caméra qui peut être déplacée librement par le joue
 ### Caméra fixe
 
 La caméra fixe est une caméra qui reste immobile pendant toute la durée du jeu. Elle permet de donner une vue d'ensemble de l'environnement du jeu et de mettre en valeur certains éléments du décor. C'est un type de caméra souvent utilisé dans les jeux de réflexion et les jeux de stratégie ou pour une caméra de surveillance.
+
+### Caméra de perspective vs caméra orthographique
+
+La caméra de perspective est une caméra qui simule la vision humaine en donnant une impression de profondeur et de perspective. C'est un type de caméra souvent utilisé dans les jeux en 3D pour donner un effet de réalisme et d'immersion.
+
+La caméra orthographique est une caméra qui donne une vue en 2D du jeu sans perspective ni profondeur. C'est un type de caméra souvent utilisé dans les jeux en 2D pour donner un effet de dessin animé ou de pixel art.
