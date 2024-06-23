@@ -1,4 +1,4 @@
-# Le blocking en design de jeux vidéo
+# Le blocking ou greyboxing
 
 Le blocking est une technique permettant de placer les éléments importants de la scène afin de tester rapidement les contrôles avant que les éléments de jeux ne soient terminés. Cela permet de vérifier que les éléments importants de la scène sont bien placés et que le joueur peut interagir avec eux correctement.
 
