@@ -1,0 +1,5 @@
+## Réflexions
+
+Les éclairages peuvent également être utilisés pour simuler des réflexions dans votre jeu, comme des objets métalliques ou des miroirs. En ajoutant un composant "Reflection Probe" à votre scène, vous pouvez capturer les réflexions de l'environnement et les appliquer aux objets de la scène. Cela peut ajouter un niveau de réalisme supplémentaire à votre jeu en simulant les réflexions de la lumière sur les surfaces réfléchissantes. Pour ajouter un composant "Reflection Probe" à votre scène, vous pouvez utiliser l'option "GameObject > Light > Reflection Probe" dans le menu principal.
+
+Pour optimiser les performances, vous pouvez ajuster la résolution et la portée du composant "Reflection Probe" en fonction de vos besoins et "bake" les réflexions pour les rendre statiques. Cela permettra d'économiser des ressources de calcul et d'améliorer les performances de votre jeu. Pour "baker" les réflexions, vous pouvez utiliser l'option "Window > Rendering > Lighting > Lightmapping Settings" dans le menu principal.

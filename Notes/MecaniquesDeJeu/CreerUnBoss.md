@@ -118,3 +118,107 @@ public class Boss : MonoBehaviour
 }
 
 ```
+
+## Pour aller plus loin
+
+Vous pourriez utiliser un state machine pour gérer les différentes phases du boss, comme une phase d'attaque, une phase de défense, une phase de transformation, etc. Vous pourriez également ajouter des mécaniques de jeu supplémentaires pour rendre le combat contre le boss encore plus intéressant, comme des attaques combinées, des attaques de zone, des attaques spéciales, etc. N'hésitez pas à expérimenter et à ajouter votre touche personnelle pour créer un boss unique et mémorable dans votre jeu.
+
+Un state machine est un moyen de gérer les différents états d'un objet dans un jeu. Chaque état correspond à un comportement ou une action spécifique de l'objet, comme une attaque, une défense, une marche, etc. La state machine permet de passer d'un état à un autre en fonction des événements du jeu, comme une collision, une interaction, un délai, etc. Voici un exemple de state machine pour gérer les différentes phases du boss. Elle est utilisée en collaboratio avec les coroutines pour gérer les délais entre les différentes phases.
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BossStateMachine : MonoBehaviour
+{
+    public enum BossState
+    {
+        Idle,
+        Attack,
+        Defense,
+        Transform,
+        Dead
+    }
+
+    private BossState currentState;
+    private Animator animator;
+
+    void Start()
+    {
+        currentState = BossState.Idle;
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        switch (currentState)
+        {
+            case BossState.Idle:
+                Idle();
+                break;
+            case BossState.Attack:
+                Attack();
+                break;
+            case BossState.Defense:
+                Defense();
+                break;
+            case BossState.Transform:
+                Transform();
+                break;
+            case BossState.Dead:
+                Dead();
+                break;
+        }
+    }
+
+    void Idle()
+    {
+        // Code pour l'état Idle
+        animation.SetBool("isIdle", true);
+        // Exemple de changement d'état après un délai
+
+        StartCoroutine(DelayState(BossState.Attack, 2f));
+
+
+    }
+
+    void Attack()
+    {
+        // Code pour l'état Attack
+
+        animation.SetBool("isAttack", true);
+
+        // Lancement d'une attaque de projectile
+        GameObject projectire = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Vector3 direction = (player.position - transform.position).normalized;
+        projectile.GetComponent<Rigidbody>().velocity = direction * 10f;
+    }
+
+    void Defense()
+    {
+        // Code pour l'état Defense
+    }
+
+    void Transform()
+    {
+        // Code pour l'état Transform
+    }
+
+    void Dead()
+    {
+        // Code pour l'état Dead
+    }
+
+    void ChangeState(BossState newState)
+    {
+        currentState = newState;
+    }
+
+    IEnumerator DelayState(BossState newState, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ChangeState(newState);
+    }
+}
+```
